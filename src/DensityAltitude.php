@@ -77,7 +77,7 @@ class DensityAltitude
     {
         // Verify disclaimer agreed
         if (!$this->agreedDisclaimer) {
-            throw new Exception('You must acknowledge the disclaimer. Please read the documentation.');
+            throw new \Exception('You must acknowledge the disclaimer. Please read the documentation.');
         }
 
         // Calculate the components
@@ -102,11 +102,11 @@ class DensityAltitude
     {
         // Blow error if missing inputs
         if (is_null($this->altitudeInFeet) && is_null($this->altitudeInMeters)) {
-            throw new Exception("Station Altitude not set. Use setAltitudeMeters() or setAltitudeFeet()");
+            throw new \Exception("Station Altitude not set. Use setAltitudeMeters() or setAltitudeFeet()");
         }
 
         if (is_null($this->altimeterPressureInMetric)) {
-            throw new Exception(
+            throw new \Exception(
                 "Altimeter reading not set. Use altimeterPressureInMillimetersHg() or altimeterPressureInInchesHg()"
             );
         }

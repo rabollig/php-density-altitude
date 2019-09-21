@@ -25,6 +25,23 @@ final class DensityAltitudeTest extends TestCase
         );
     }
 
+    public function testThrowsExceptionIfNoDisclaimer()
+    {
+        $threwException = false;
+        try {
+            $calculator = new rabollig\DensityAltitude();
+            $calculator->altitudeInFeet(998.4);
+            $calculator->temperatureInC(27);
+            $calculator->dewpointInC(14);
+            $calculator->altimeterPressureInInchesHg(30.28);
+            $calculator->calculateDensityAltitude();
+        } catch (\Exception $e) {
+            $threwException = true;
+        }
+
+        $this->assertTrue($threwException);
+    }
+
     public function testTemperatureGoesUpDensityAltitudeGoesUp()
     {
         $calculator = new rabollig\DensityAltitude();
