@@ -59,7 +59,11 @@ When comparing the formula and class to FAA AWOS reports, the
 Other formulas and calculators appear to give much different 
 results. I don't have a clear enough understanding of 
 density altitude to make judgements on why other reports and
-calculators produce significantly different results
+calculators produce significantly different results.
+
+https://airdensityonline.com/free-calcs/ is an example of 
+another calculator that seems more knowledgable than me, but
+gives pretty different answers. 
 
 ### Notes on testing
 
