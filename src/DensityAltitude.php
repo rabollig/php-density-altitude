@@ -131,7 +131,7 @@ class DensityAltitude
         $this->stationPressureInMillibars = $this->convertInchesHgToMillibars($this->stationPressureInInchesHg);
 
         $TvK = $this->temperatureInKelvin
-            / (1 - ($this->virtualTemperature/$this->stationPressureInMillibars) * (1-0.622));
+            / (1 - ($this->virtualTemperatureInRankine/$this->stationPressureInMillibars) * (1-0.622));
         $this->virtualTemperatureInRankine = $this->convertKelvinToRankine($TvK);
     }
 
