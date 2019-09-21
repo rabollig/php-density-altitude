@@ -1,6 +1,5 @@
 <?php
-
-
+namespace rabollig;
 
 class DensityAltitude
 {
@@ -19,7 +18,6 @@ class DensityAltitude
 
     public function __construct()
     {
-
     }
 
     public function altitudeInMeters($meters)
@@ -75,7 +73,8 @@ class DensityAltitude
         $this->agreedDisclaimer = true;
     }
 
-    public function calculateDensityAltitude() {
+    public function calculateDensityAltitude()
+    {
         // Verify disclaimer agreed
         if (!$this->agreedDisclaimer) {
             throw new Exception('You must acknowledge the disclaimer. Please read the documentation.');
@@ -107,7 +106,7 @@ class DensityAltitude
         }
 
         $stationPressure = $this->altimeterPressureInMetric
-            * pow(((288 - 0.0065 * $this->altitudeInMeters) / 288) , 5.2561);
+            * pow(((288 - 0.0065 * $this->altitudeInMeters) / 288), 5.2561);
         $this->stationPressureInInchesHg = $stationPressure;
         $this->stationPressureInMillibars = $this->convertInchesHgToMillibars($stationPressure);
 
