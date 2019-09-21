@@ -89,7 +89,13 @@ class DensityAltitude
         $hDensity = 145366 *
             (1 - (pow((17.326 * $this->stationPressureInInchesHg / $this->virtualTemperatureInRankine), 0.235)));
 
-        return $hDensity;
+        // Output in the preferred units
+        if ($this->outputUnits == 'feet') {
+            return $hDensity;
+        }
+        if ($this->outputUnits == 'meters') {
+            return $hDensity * 12 * 2.54 / 100;
+        }
     }
 
     private function calculateStationPressure()
