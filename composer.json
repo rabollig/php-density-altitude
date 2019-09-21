@@ -1,0 +1,19 @@
+{
+    "name": "rabollig/density-altitude",
+    "type": "library",
+    "description": "Density Altitude calculator",
+    "keywords": ["altitude","atmosphere","density altitude"],
+    "homepage": "https://github.com/rabollig/php-density-altitude",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Randall Bollig",
+            "email": "packagist@bacn.randallbollig.com",
+            "homepage": "https://www.randallbollig.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
