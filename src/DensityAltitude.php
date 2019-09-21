@@ -51,9 +51,9 @@ class DensityAltitude
 
     public function temperatureInF($reading)
     {
-        // Convert to Celcius
-        $celcius = 5/9 * ($reading - 32);
-        $this->temperatureInC($celcius);
+        // Convert to celsius
+        $celsius = 5/9 * ($reading - 32);
+        $this->temperatureInC($celsius);
     }
 
     public function dewpointInC($reading)
@@ -63,9 +63,9 @@ class DensityAltitude
 
     public function dewpointInF($reading)
     {
-        // Convert to Celcius
-        $celcius = 5/9 * ($reading - 32);
-        $this->dewpointInC = $celcius;
+        // Convert to Celsius
+        $celsius = 5/9 * ($reading - 32);
+        $this->dewpointInC = $celsius;
     }
 
     public function DANGERthisClassNotIntendedForSafetyCriticalUses($response)
