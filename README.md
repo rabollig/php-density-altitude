@@ -14,7 +14,7 @@ Density altitude can affect the oxygen intake to engines and
 athletes, the performance of aircraft, and even beer brewing
 and cake baking.
 
-## DANGER!
+# DANGER!
 
 ### Do *not* use this class for safety-sensitive applications:
 - Do not use for flight planning, operation or navigation
@@ -26,14 +26,44 @@ and cake baking.
   or catastrophe
   
 **You must indicate your understanding of this disclaimer when calling the class**
+
+# Use
+
+To calculate density altitude, we need to know the actual 
+altitude, the temperature, the dewpoint, and the air pressure.
+
+The class can accept inputs in several common units.
+
+The class will output the density altitude in either feet
+or meters depending on the units used to set the altitude
+initially.
+
+Inputs may be in any order.
+
+```
+$calculator = new DensityAltitude();
+$calculator->altitudeInFeet(998.4);
+$calculator->temperatureInC(27);
+$calculator->dewpointInC(14);
+$calculator->altimeterPressureInInchesHg(30.28);
+$calculator->DANGERthisClassNotIntendedForSafetyCriticalUses('understood');
+echo round($calculator->calculateDensityAltitude()); // 2225
+```
+
+You must include the method acknowledging the safety 
+considerations of this class. This is required so that future
+maintainers of your code are aware of the class's limitations
+and do not blindly copy the code to more critical applications.
+
   
+# Notes
   
-### This class is not certified. This class has no engineering or scientific review.
+## This class is not certified. This class has no engineering or scientific review.
 
 This class was not developed by a physicist, meteorologist or 
 engineer - nor has it been tested or reviewed by one.
 
-### Notes on the formulas used
+## Notes on the formulas used
 The developer is a private pilot, so has some clue about density
 altitide. The formulas are based on 
 https://www.weather.gov/epz/wxcalc_densityaltitude 
@@ -65,7 +95,7 @@ https://airdensityonline.com/free-calcs/ is an example of
 another calculator that seems more knowledgable than me, but
 gives pretty different answers. 
 
-### Notes on testing
+## Notes on testing
 
 Even though I am a pilot, I will not rely on this class for 
 navigation - I will instead rely on the Density Altitude charts,
@@ -79,34 +109,6 @@ moved in the correct direction (nothing wired backwards).
 
 I tested examples from flight training materials I own.
 
-
-# Use
-
-To calculate density altitude, we need to know the actual 
-altitude, the temperature, the dewpoint, and the air pressure.
-
-The class can accept inputs in several common units.
-
-The class will output the density altitude in either feet
-or meters depending on the units used to set the altitude
-initially.
-
-Inputs may be in any order.
-
-```
-$calculator = new DensityAltitude();
-$calculator->altitudeInFeet(998.4);
-$calculator->temperatureInC(27);
-$calculator->dewpointInC(14);
-$calculator->altimeterPressureInInchesHg(30.28);
-$calculator->DANGERthisClassNotIntendedForSafetyCriticalUses('understood');
-echo round($calculator->calculateDensityAltitude()); // 2225
-```
-
-You must include the method acknowledging the safety 
-considerations of this class. This is required so that future
-maintainers of your code are aware of the class's limitations
-and do not blindly copy the code to more critical applications.
 
 # Contributions
 
